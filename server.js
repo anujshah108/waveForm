@@ -35,6 +35,12 @@ app.post('/upload', function(req, res) {
   if (!req.files) {
     return res.status(400).send('No files were uploaded.');
   }
+
+  var temp_dir = path.resolve(__dirname, 'public/tmp/');
+  if (!fs.existsSync(temp_dir)) {
+    fs.mkdirSync(temp_dir);
+  }
+
   let audioFile = req.files.audioFile;
   audioFile.mv(audiouploaded, function(err) {
     if (err) {
