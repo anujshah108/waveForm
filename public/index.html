@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wave Audio</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app.css">
+  </head>
+
+  <body>
+
+    <div id="app-widget">
+      <section class="timertask">
+        <header class="header">
+          <h1>Wave Audio</h1>
+          <input class="new-task" placeholder="What is your label?" autofocus="" v-model="label" id="labelwave" >
+        </header>
+
+        </br>
+        <div class="container">
+          <div class="row">
+              <div class="col-md-3">Color 1 <input placeholder="Color1" autofocus="" v-model="c1"/></div>
+              <div class="col-md-3">Color 2 <input placeholder="Color2" autofocus="" v-model="c2"/></div>
+          </div>
+          <div class="row">
+              <div class="col-md-3">Color 3 <input placeholder="Color3" autofocus="" v-model="c3"/></div>
+              <div class="col-md-3">Color 4 <input placeholder="Color4" autofocus="" v-model="c4"/></div>
+          </div>
+          <div class="row">
+              <div class="col-md-3">Color 5 <input placeholder="Color5" autofocus="" v-model="c5"/></div>
+              <div class="col-md-3">Color 6 <input placeholder="Color6" autofocus="" v-model="c6"/></div>
+          </div>
+          </br>
+          <div class="row">
+            <div class="col-md-12">Size + Font <input placeholder="font" style="width:400px" autofocus="" v-model="font"/></div>
+          </div>
+        </div>
+
+        <form ref='uploadForm' id='uploadForm' action='http://localhost:8081/upload' method='post' encType="multipart/form-data">
+          <input class="new-task" style="font-size: 16px;" type="file" name="audioFile" />
+        </form>
+        <button type="button" class="btn btn-primary btn-lg btn-block" value='Upload!' v-on:click="upload">Upload !</button>
+
+      </section>
+
+      <div class="loader loader--style8" style="text-align: center" title="7" v-if="loading">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           width="24px" height="30px" viewBox="0 0 24 30" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+          <rect x="0" y="10" width="4" height="10" fill="#333" opacity="0.2">
+            <animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0s" dur="0.6s" repeatCount="indefinite" />
+            <animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0s" dur="0.6s" repeatCount="indefinite" />
+            <animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0s" dur="0.6s" repeatCount="indefinite" />
+          </rect>
+          <rect x="8" y="10" width="4" height="10" fill="#333"  opacity="0.2">
+            <animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+            <animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+            <animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.15s" dur="0.6s" repeatCount="indefinite" />
+          </rect>
+          <rect x="16" y="10" width="4" height="10" fill="#333"  opacity="0.2">
+            <animate attributeName="opacity" attributeType="XML" values="0.2; 1; .2" begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+            <animate attributeName="height" attributeType="XML" values="10; 20; 10" begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+            <animate attributeName="y" attributeType="XML" values="10; 5; 10" begin="0.3s" dur="0.6s" repeatCount="indefinite" />
+          </rect>
+        </svg>
+      </div>
+    </div>
+
+    <div id="waveform" style="left: 0px;position: relative; width:1800px"></div>
+    <div id="waveformc" style="left: 0px;position: relative; width:1800px"></div>
+    <div id="wavesurferscheme" style="left: 0px;position: relative; width:1800px"></div>
+    <!-- </br> -->
+    <!-- <footer class="footer">© 2017 Wave Audio | <a href="http://www.yoannck.com">YCK</a></footer> -->
+
+    <script src="https://unpkg.com/vue@2.2.4"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.2.1/vue-resource.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.3.2/wavesurfer.min.js"></script>
+    <script src="app.js"></script>
+
+  </body>
+</html>

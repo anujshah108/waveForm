@@ -1,0 +1,19 @@
+{
+  "name": "waveaudio",
+  "version": "1.0.0",
+  "description": "MP3 to Waveform",
+  "main": "server.js",
+  "author": "Yoann Chane Kive",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.1",
+    "express": "latest",
+    "express-fileupload": "^0.1.2",
+    "request": "^2.81.0",
+    "wavesurfer": "^1.3.4"
+  }
+}
