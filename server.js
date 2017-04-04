@@ -8,6 +8,12 @@ var cors = require('cors');
 
 var app  = express();
 var audiouploaded = path.resolve(__dirname, 'public/tmp/audioup.mp3');
+var http = require("http")
+
+
+setInterval(function() {
+    http.get("http://waveform108.herokuapp.com");
+}, 300000); // every 5 minutes (300000)
 
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
