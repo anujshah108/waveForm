@@ -311,7 +311,8 @@ var app = new Vue({
     c4: '#bde0af',
     c5: '#00f6ff',
     c6: '#9a7eb8',
-    font: '50px Georgia'
+    font: '50px Georgia',
+    height: 1.111
   },
   mounted () {
     this.wavesurfer = WaveSurfer.create({
@@ -320,7 +321,7 @@ var app = new Vue({
       cursorWidth: 0,
       hideScrollbar: true,
       fillParent: true,
-      barHeight: 1.111,
+      barHeight: this.height,
       height: 600,
       fontcustom: this.font,
       renderer: 'MyDrawer'
@@ -331,7 +332,7 @@ var app = new Vue({
       cursorWidth: 0,
       hideScrollbar: true,
       fillParent: true,
-      barHeight: 1.111,
+      barHeight: this.height,
       height: 600,
       fontcustom: this.font,
       renderer: 'MyDrawer'
@@ -343,7 +344,7 @@ var app = new Vue({
       cursorWidth: 0,
       hideScrollbar: true,
       fillParent: true,
-      barHeight: 1.111,
+      barHeight: this.height,
       height: 600,
       fontcustom: this.font,
       renderer: 'Scheme'
@@ -362,9 +363,15 @@ var app = new Vue({
       var myForm = document.getElementById('uploadForm');
       var formData = new FormData(myForm);
 
+
+
       app.wavesurfer.params.fontcustom = this.font;
       app.wavesurferc.params.fontcustom = this.font;
       app.wavesurferscheme.params.fontcustom = this.font;
+
+      app.wavesurfer.params.barHeight = this.height;
+      app.wavesurferc.params.barHeight = this.height;
+      app.wavesurferscheme.params.barHeight = this.height;
 
       app.wavesurferscheme.params.waveColor = [];
       if (this.c1 != '') {
