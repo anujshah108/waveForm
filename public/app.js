@@ -320,7 +320,7 @@ var app = new Vue({
       cursorWidth: 0,
       hideScrollbar: true,
       fillParent: true,
-      barHeight: 1.5,
+      barHeight: 1.111,
       height: 600,
       fontcustom: this.font,
       renderer: 'MyDrawer'
@@ -331,7 +331,7 @@ var app = new Vue({
       cursorWidth: 0,
       hideScrollbar: true,
       fillParent: true,
-      barHeight: 1.5,
+      barHeight: 1.111,
       height: 600,
       fontcustom: this.font,
       renderer: 'MyDrawer'
@@ -343,7 +343,7 @@ var app = new Vue({
       cursorWidth: 0,
       hideScrollbar: true,
       fillParent: true,
-      barHeight: 1.5,
+      barHeight: 1.111,
       height: 600,
       fontcustom: this.font,
       renderer: 'Scheme'
