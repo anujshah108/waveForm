@@ -130,6 +130,13 @@ WaveSurfer.util.extend(WaveSurfer.Drawer.MyDrawer, {
             var textWidth = cc.measureText(label.value).width;
             cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height - 50);
 
+            cc.fillStyle = 'black';
+            var label = document.getElementById('sublabelwave');
+            cc.font = my.params.fontcustom2;
+            var textWidth = cc.measureText(label.value).width;
+            cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height - 25);
+
+
         }, this);
     },
 });
@@ -291,6 +298,13 @@ WaveSurfer.util.extend(WaveSurfer.Drawer.Scheme, {
             cc.font = my.params.fontcustom;
             var textWidth = cc.measureText(label.value).width;
             cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height - 50);
+
+            cc.fillStyle = 'black';
+            var label = document.getElementById('sublabelwave');
+            cc.font = my.params.fontcustom2;
+            var textWidth = cc.measureText(label.value).width;
+            cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height - 25);
+
         }, this);
     },
 });
@@ -300,6 +314,7 @@ var app = new Vue({
   data: {
     urlaudio: null,
     label: null,
+    sublabel: null,
     wavesurfer: null,
     wavesurferc: null,
     wavesurferscheme: null,
@@ -312,6 +327,7 @@ var app = new Vue({
     c5: '#00f6ff',
     c6: '#9a7eb8',
     font: '50px Georgia',
+    font2: '30px Georgia',
     height: 1.111
   },
   mounted () {
@@ -324,6 +340,7 @@ var app = new Vue({
       barHeight: this.height,
       height: 600,
       fontcustom: this.font,
+      fontcustom2: this.font2,
       renderer: 'MyDrawer'
     });
     this.wavesurferc = WaveSurfer.create({
@@ -335,6 +352,7 @@ var app = new Vue({
       barHeight: this.height,
       height: 600,
       fontcustom: this.font,
+      fontcustom2: this.font2,
       renderer: 'MyDrawer'
     });
 
@@ -347,6 +365,7 @@ var app = new Vue({
       barHeight: this.height,
       height: 600,
       fontcustom: this.font,
+      fontcustom2: this.font2,
       renderer: 'Scheme'
     });
 
@@ -368,6 +387,10 @@ var app = new Vue({
       app.wavesurfer.params.fontcustom = this.font;
       app.wavesurferc.params.fontcustom = this.font;
       app.wavesurferscheme.params.fontcustom = this.font;
+
+       app.wavesurfer.params.fontcustom2 = this.font2;
+      app.wavesurferc.params.fontcustom2 = this.font2;
+      app.wavesurferscheme.params.fontcustom2 = this.font2;
 
       app.wavesurfer.params.barHeight = this.height;
       app.wavesurferc.params.barHeight = this.height;
