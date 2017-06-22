@@ -128,13 +128,13 @@ WaveSurfer.util.extend(WaveSurfer.Drawer.MyDrawer, {
             var label = document.getElementById('labelwave');
             cc.font = my.params.fontcustom;
             var textWidth = cc.measureText(label.value).width;
-            cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height - 70);
+            cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height - 75);
 
             cc.fillStyle = 'black';
             var label = document.getElementById('sublabelwave');
             cc.font = my.params.fontcustom2;
             var textWidth = cc.measureText(label.value).width;
-            cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height - 6);
+            cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height - 10);
 
 
         }, this);
@@ -297,13 +297,13 @@ WaveSurfer.util.extend(WaveSurfer.Drawer.Scheme, {
             var label = document.getElementById('labelwave');
             cc.font = my.params.fontcustom;
             var textWidth = cc.measureText(label.value).width;
-            cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height - 70);
+            cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height - 75);
 
             cc.fillStyle = 'black';
             var label = document.getElementById('sublabelwave');
             cc.font = my.params.fontcustom2;
             var textWidth = cc.measureText(label.value).width;
-            cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height - 6);
+            cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height - 10);
 
         }, this);
     },
