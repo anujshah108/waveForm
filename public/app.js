@@ -134,7 +134,7 @@ WaveSurfer.util.extend(WaveSurfer.Drawer.MyDrawer, {
             var label = document.getElementById('sublabelwave');
             cc.font = my.params.fontcustom2;
             var textWidth = cc.measureText(label.value).width;
-            cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height - 15);
+            cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height);
 
 
         }, this);
@@ -303,7 +303,7 @@ WaveSurfer.util.extend(WaveSurfer.Drawer.Scheme, {
             var label = document.getElementById('sublabelwave');
             cc.font = my.params.fontcustom2;
             var textWidth = cc.measureText(label.value).width;
-            cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height - 15);
+            cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height);
 
         }, this);
     },
@@ -327,7 +327,7 @@ var app = new Vue({
     c5: '#00f6ff',
     c6: '#9a7eb8',
     font: '70px Helvetica',
-    font2: '30px Helvetica',
+    font2: '40px Helvetica',
     height: 1.111
   },
   mounted () {
