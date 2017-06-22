@@ -134,7 +134,7 @@ WaveSurfer.util.extend(WaveSurfer.Drawer.MyDrawer, {
             var label = document.getElementById('sublabelwave');
             cc.font = my.params.fontcustom2;
             var textWidth = cc.measureText(label.value).width;
-            cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height - 5);
+            cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height - 6);
 
 
         }, this);
@@ -303,7 +303,7 @@ WaveSurfer.util.extend(WaveSurfer.Drawer.Scheme, {
             var label = document.getElementById('sublabelwave');
             cc.font = my.params.fontcustom2;
             var textWidth = cc.measureText(label.value).width;
-            cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height - 5);
+            cc.fillText(label.value, (this.width / 2) - (textWidth / 2), height - 6);
 
         }, this);
     },
